@@ -1,0 +1,69 @@
+#include <stdio.h> /*Archivo de cabecera o bien biblioteca standar*/
+
+/*UNAM - FCA - SUAYED - SISTEMA A DISTANCIA
+LICENCIATURA EN INFORMATICA
+GENERACION 2025-1 - GRUPO: 8192
+MATERIA: DISEÑO DE ALGORITMOS (2125)
+UNIDAD 5. ACTIVIDAD COMPLEMENTARIA 2
+PROF. MARTÍNEZ FERNÁNDEZ JUAN MANUEL
+ALUMNO: JOSÉ ANTONIO GARCÍA SANDOVAL
+NO. CUENTA: 304347089 - 4 DE NOVIEMBRE 2023*/
+
+/*Elabora un programa en lenguaje C en donde generes una sucesion numerica a partir de la siguiente formula:
+1 − 1/(n + 1)^2
+Donde n son números enteros positivos diferentes de cero. El programa debera mostrar a partir de un numero
+ingresado por el usuario los numeros generados a partir del 1 hasta el valor ingresado. Por ejemplo, 
+si n=3 se debe mostrar:
+Salida = 3
+¾, 8/9,  15/16
+(la representación puede ser en decimal)
+Emplea las estructuras iterativas que consideres necesarias*/
+
+
+int main() /*cabecera de funcion o funcion principal*/
+{
+/*Declaracion de variables*/
+int N;
+float resultado;
+
+
+/*ENCABEZADO DEL PROGRAMA*/
+printf("PROGRAMA DE SUCESION NUMERICA A PARTIR DE LA ECUACION:\n");
+printf("1 − 1/(n + 1)^2\n");
+printf("DONDE n SERAN NUMEROS POSITIVOS DIFERENTES DE CERO");
+
+/*INFORMACIÓN QUE INTRODUCE EL USUARIO*/
+printf("INTRODUZCA UN NUMERO n POSITIVO DIFERENTE DE CERO:  ");
+scanf("%d, N);
+
+/*Si el usuario escribe 0 o un numero negativo entonces mandar mensaje de error
+y pedir de nuevo un numero entero positivo diferente de cero*/
+
+if (N <= 0) { 
+printf("ERROR. POR FAVOR DIGITE UN NUMERO POSITIVO DIFERENTE DE CERO\n")
+return 1;
+}
+
+/*SI EL USUARIO SIGUE LA INSTRUCCION, ENTONCES GENERA UNA NUMERACION 
+DESDE N=1 HASTA EL VALOR QUE EL USUARIO HAYA OTORGADO A N */
+
+printf("SUCESION GENERADA:\n");
+for (int n = 1; n <= N; n++) {
+/*Resuelve la ecuación con los valores posibles de n*/
+
+resultado = 1 - 1 / pow(n + 1, 2);
+
+/*Resultados en pantalla*/
+printf("n=%d: %.6f\n", n, resultado); 
+} 
+
+return 0;
+} 
+
+
+
+
+
+
+
+
